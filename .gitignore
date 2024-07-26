@@ -1,0 +1,16 @@
+*.iml
+.gradle
+/.idea
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+/loadingballs
+/release
+/debug
+tools/V2ChannelTool/OpenDev/od_MakeV2ChannelApk/.idea
+local.properties
+~$V2ChannelTools说明.xlsx
+~$V2ChannelTool技术架构.xlsx
+~$CDN 测试 CASE.xlsx
