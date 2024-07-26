@@ -1,7 +1,9 @@
-package com.example.test22;
+package com.game.sdk.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import com.game.sdk.frame.R;
 
 public class MainActivity extends Activity {
 
