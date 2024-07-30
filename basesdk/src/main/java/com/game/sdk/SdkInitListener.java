@@ -6,10 +6,10 @@ import androidx.annotation.Keep;
 @Keep
 public abstract class SdkInitListener {
     @CallSuper
-    public void onInitSucceeded(String message) {
+    public void onSuccess() {
     }
 
     @CallSuper
-    public void onInitFailed(String message) {
+    public void onFail(String desc) {
     }
 }

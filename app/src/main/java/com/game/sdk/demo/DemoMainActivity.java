@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.game.sdk.frame.R;
 
-public class MainActivity extends Activity {
+public class DemoMainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

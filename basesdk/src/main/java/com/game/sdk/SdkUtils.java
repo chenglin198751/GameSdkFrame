@@ -39,36 +39,11 @@ public class SdkUtils {
      *
      * @return
      */
-    public static @NonNull
-    Application getApp() {
-        if (SdkBridge.application != null) {
-            return SdkBridge.application;
+    public static @NonNull Application getApp() {
+        if (SdkBridge.application == null) {
+            throw new NullPointerException("The game application is null");
         }
-
-        Application application = null;
-        try {
-            Class atClass = Class.forName("android.app.ActivityThread");
-            Method currentApplicationMethod = atClass.getDeclaredMethod("currentApplication");
-            currentApplicationMethod.setAccessible(true);
-            application = (Application) currentApplicationMethod.invoke(null);
-        } catch (Exception e) {
-        }
-
-        if (application != null)
-            return application;
-
-        try {
-            Class atClass = Class.forName("android.app.AppGlobals");
-            Method currentApplicationMethod = atClass.getDeclaredMethod("getInitialApplication");
-            currentApplicationMethod.setAccessible(true);
-            application = (Application) currentApplicationMethod.invoke(null);
-        } catch (Exception e) {
-        }
-
-        if (application != null)
-            return application;
-
-        return null;
+        return SdkBridge.application;
     }
 
     public static Activity getActivity() {

@@ -1,9 +1,164 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:keepScreenOn="true"
+    android:padding="15dp">
 
+    <TextView
+        android:id="@+id/demo_result_tips"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toLeftOf="@+id/demo_bottom_layout"
+        android:background="@drawable/demo_tv_bg"
+        android:enabled="true"
+        android:focusable="true"
+        android:hint="显示日志信息，长按可复制"
+        android:lineSpacingMultiplier="1.2"
+        android:longClickable="true"
+        android:padding="10dp"
+        android:textColor="#333333"
+        android:textColorHint="#999999"
+        android:textIsSelectable="true"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/demo_btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/demo_result_tips"
+        android:layout_alignBottom="@+id/demo_result_tips"
+        android:layout_margin="5dp"
+        android:background="@drawable/demo_tv_bg"
+        android:paddingLeft="5dp"
+        android:paddingTop="3dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="3dp"
+        android:text="清空"
+        android:textColor="#666666"
+        android:textSize="11dp" />
+
+    <RelativeLayout
+        android:id="@+id/demo_bottom_layout"
+        android:layout_width="290dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/demo_layout_bg"
+        android:padding="15dp">
+
+        <EditText
+            android:id="@+id/demo_pay_money"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/demo_layout_bg"
+            android:imeOptions="flagNoExtractUi"
+            android:inputType="number"
+            android:paddingLeft="12dp"
+            android:textColor="#333333"
+            android:textSize="13dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/demo_pay_money"
+            android:layout_marginTop="15dp"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/demo_button_login"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:text="登  录"
+                    android:textColor="#333333"
+                    android:textSize="15dp" />
+
+                <Space
+                    android:layout_width="7dp"
+                    android:layout_height="42dp" />
+
+                <Button
+                    android:id="@+id/demo_button_logout"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:text="注  销"
+                    android:textColor="#333333"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/demo_button_exit"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="15dp"
+                    android:autoSizeMinTextSize="12dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="退  出"
+                    android:textColor="#333333"
+                    android:textSize="15dp" />
+
+                <Space
+                    android:layout_width="7dp"
+                    android:layout_height="42dp" />
+
+                <Button
+                    android:id="@+id/demo_button_change_account"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:text="切换账户"
+                    android:textColor="#333333"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/demo_button_pay"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:text="支  付"
+                    android:textColor="#333333"
+                    android:textSize="15dp" />
+
+                <!--                <Space-->
+                <!--                    android:layout_width="7dp"-->
+                <!--                    android:layout_height="42dp" />-->
+
+                <!--                <Button android:visibility="invisible"-->
+                <!--                    android:id="@+id/demo_button_22"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="42dp"-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    android:text=""-->
+                <!--                    android:textColor="#333333"-->
+                <!--                    android:textSize="15dp" />-->
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
