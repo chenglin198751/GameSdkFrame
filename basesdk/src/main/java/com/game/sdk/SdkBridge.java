@@ -13,7 +13,6 @@ public class SdkBridge {
     public static String m2;
     public static String SDK_PLAT;
     public static String LOGIN_CHANNEL;
-    public static SdkParams.RegionSubType regionSubType;
     public static OnActivityResultListener onActivityResultListener;
     public static OnNewIntentListener onNewIntentListener;
     public static OnApplicationListener onApplicationListener;

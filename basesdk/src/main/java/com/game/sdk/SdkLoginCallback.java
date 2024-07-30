@@ -3,12 +3,6 @@ package com.game.sdk;
 import androidx.annotation.CallSuper;
 import androidx.annotation.Keep;
 
-import com.easy.alonesdk.bean.SdkParams;
-import com.easy.alonesdk.utils.YdasConstant;
-import com.easy.alonesdk.utils.YdasUtils;
-
-import java.util.HashMap;
-
 @Keep
 public abstract class SdkLoginCallback {
 

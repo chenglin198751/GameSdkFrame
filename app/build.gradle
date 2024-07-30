@@ -28,6 +28,7 @@ android {
 }
 
 dependencies {
+    implementation project(':basesdk')
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation fileTree(dir: '../exclude_libs', include: ['*.jar'])
     implementation fileTree(dir: '../exclude_libs', include: ['*.aar'])

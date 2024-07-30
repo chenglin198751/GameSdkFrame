@@ -1,51 +1,21 @@
 package com.game.sdk;
 
 import android.app.Activity;
-import android.app.Application;
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.text.TextUtils;
 
 import androidx.annotation.CallSuper;
 import androidx.annotation.Keep;
+import androidx.annotation.NonNull;
 
 
 @Keep
 public abstract class IBaseSdk {
-    /**
-     * @param context       Context
-     * @param isDebugLog    是否开启日志，上线前一定要关闭
-     * @param regionSubType 开服服务器，枚举类型，比如日韩服，全球服。
-     * @param listener      初始化结果监听
-     */
+
     @CallSuper
-    public void init(Context context, boolean isDebugLog, SdkParams.RegionSubType regionSubType, SdkResultListener listener) {
+    public void init(@NonNull Activity Activity, @NonNull SdkInitListener listener) {
         if (SdkBridge.application == null) {
-            if (context instanceof Activity) {
-                Activity act = (Activity) context;
-                SdkBridge.application = act.getApplication();
-            } else if (context instanceof Application) {
-                SdkBridge.application = (Application) context;
-            } else if (context instanceof ContextWrapper) {
-                Activity act = SdkUtils.getActivityFromContext(context);
-                SdkBridge.application = act.getApplication();
-            }
+            SdkBridge.application = Activity.getApplication();
         }
-
-        if (regionSubType == SdkParams.RegionSubType.NONE) {
-            throw new RuntimeException("Initialization parameter RegionSubType cannot be set to RegionSubType.NONE");
-        }
-
-        SdkBridge.regionSubType = regionSubType;
-        SdkLogUtils.isDebugLog = isDebugLog;
-    }
-
-    /**
-     * @param activity 游戏主Activity
-     */
-    @CallSuper
-    public void setActivity(Activity activity) {
-        SdkBridge.activity = activity;
     }
 
     /**
@@ -64,7 +34,7 @@ public abstract class IBaseSdk {
      * @param listener 退出登录结果监听
      */
     @CallSuper
-    public void logout(Activity activity, SdkResultListener listener) {
+    public void logout(Activity activity, SdkInitListener listener) {
     }
 
     /**
@@ -76,9 +46,9 @@ public abstract class IBaseSdk {
     }
 
     /**
-     * @param activity 游戏主Activity
+     * @param activity  游戏主Activity
      * @param payParams 支付参数结构体
-     * @param callback 支付结果监听
+     * @param callback  支付结果监听
      */
     @CallSuper
     public void pay(Activity activity, PayParams payParams, SdkPayCallback callback) {
@@ -92,11 +62,11 @@ public abstract class IBaseSdk {
     }
 
     /**
-     * @param activity  activity 游戏主Activity
+     * @param activity activity 游戏主Activity
      * @param listener 退弹结果监听
      */
     @CallSuper
-    public void exit(Activity activity, SdkResultListener listener) {
+    public void exit(Activity activity, SdkInitListener listener) {
     }
 
     /**

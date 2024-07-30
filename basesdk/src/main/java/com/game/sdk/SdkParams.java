@@ -41,12 +41,6 @@ public final class SdkParams {
         public static final String AWIN = "awin";
     }
 
-    public enum RegionSubType {
-        NONE,
-        GLOBLE,
-        JP;
-    }
-
     @IntDef({LoginCode.LOGIN_SUCCESS, LoginCode.LOGIN_UNSUPPORTED, LoginCode.LOGIN_FAILED, LoginCode.LOGIN_CANCEL})
     @Retention(RetentionPolicy.SOURCE)
     public @interface LoginType {

@@ -1,8 +1,7 @@
 package com.game.sdk;
 
 import androidx.annotation.Keep;
-
-import com.easy.alonesdk.utils.GsonUtils;
+import androidx.annotation.NonNull;
 
 /**
  * SDK用户参数，uid,token是我司SDK平台自身赋值
@@ -37,8 +36,22 @@ public class UserParams {
         error = null;
     }
 
+    @NonNull
     @Override
     public String toString() {
-        return GsonUtils.gson.toJson(this);
+        return "UserParams{" +
+                "isSuccess=" + isSuccess +
+                ", token='" + token + '\'' +
+                ", uid='" + uid + '\'' +
+                ", sign='" + sign + '\'' +
+                ", timestamp='" + timestamp + '\'' +
+                ", picture='" + picture + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                ", channel='" + channel + '\'' +
+                ", adId='" + adId + '\'' +
+                ", error='" + error + '\'' +
+                '}';
     }
 }
